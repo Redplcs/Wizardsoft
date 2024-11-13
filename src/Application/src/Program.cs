@@ -15,5 +15,5 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.MapCrudOperations();
+app.MapGetCrudEndpoints();
 app.Run();
