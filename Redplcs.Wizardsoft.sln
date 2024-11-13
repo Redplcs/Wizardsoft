@@ -9,6 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{7634CC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redplcs.Wizardsoft.Domain", "src\Domain\src\Redplcs.Wizardsoft.Domain.csproj", "{947AA697-9A2C-4104-935A-510AEC253353}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{1B6693F5-DE72-4313-AC1C-0B7A386F3C83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redplcs.Wizardsoft.Database", "src\Database\src\Redplcs.Wizardsoft.Database.csproj", "{5A52B4B0-CFA6-4452-B1D3-707F764B6E96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,9 +26,15 @@ Global
 		{947AA697-9A2C-4104-935A-510AEC253353}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{947AA697-9A2C-4104-935A-510AEC253353}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{947AA697-9A2C-4104-935A-510AEC253353}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A52B4B0-CFA6-4452-B1D3-707F764B6E96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A52B4B0-CFA6-4452-B1D3-707F764B6E96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A52B4B0-CFA6-4452-B1D3-707F764B6E96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A52B4B0-CFA6-4452-B1D3-707F764B6E96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7634CC36-DB5A-47A0-8F34-DF06652A2AE8} = {C42F41A7-CCD0-47E8-8840-7EBB066F6158}
 		{947AA697-9A2C-4104-935A-510AEC253353} = {7634CC36-DB5A-47A0-8F34-DF06652A2AE8}
+		{1B6693F5-DE72-4313-AC1C-0B7A386F3C83} = {C42F41A7-CCD0-47E8-8840-7EBB066F6158}
+		{5A52B4B0-CFA6-4452-B1D3-707F764B6E96} = {1B6693F5-DE72-4313-AC1C-0B7A386F3C83}
 	EndGlobalSection
 EndGlobal
