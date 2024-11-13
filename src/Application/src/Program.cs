@@ -1,4 +1,4 @@
-using Redplcs.Wizardsoft.Application;
+using Redplcs.Wizardsoft.Application.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
