@@ -1,0 +1,6 @@
+@Redplcs.Wizardsoft.Application_HostAddress = http://localhost:5231
+
+GET {{Redplcs.Wizardsoft.Application_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
