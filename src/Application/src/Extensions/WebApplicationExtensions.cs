@@ -16,9 +16,13 @@ public static class WebApplicationExtensions
 		return app;
 	}
 
-	private static void CreateHandler()
+	private static TreeItem CreateHandler(
+		[FromServices] ITreeItemRepository repository)
 	{
-		throw new NotImplementedException();
+		var item = TreeItem.Create();
+		repository.Create(item);
+
+		return item;
 	}
 
 	private static IEnumerable<TreeItem> GetAllHandler(
