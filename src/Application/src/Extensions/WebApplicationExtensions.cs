@@ -21,7 +21,8 @@ public static class WebApplicationExtensions
 		throw new NotImplementedException();
 	}
 
-	private static IEnumerable<TreeItem> GetAllHandler([FromServices] ITreeItemRepository repository)
+	private static IEnumerable<TreeItem> GetAllHandler(
+		[FromServices] ITreeItemRepository repository)
 	{
 		return repository.GetAll();
 	}
@@ -38,8 +39,19 @@ public static class WebApplicationExtensions
 		throw new NotImplementedException();
 	}
 
-	private static void DeleteHandler()
+	private static IResult DeleteHandler(
+		[FromQuery] Guid id,
+		[FromServices] ITreeItemRepository repository)
 	{
-		throw new NotImplementedException();
+		var item = repository.GetById(id);
+
+		if (item is null)
+		{
+			return Results.NotFound();
+		}
+
+		repository.Delete(item);
+
+		return Results.Ok();
 	}
 }
