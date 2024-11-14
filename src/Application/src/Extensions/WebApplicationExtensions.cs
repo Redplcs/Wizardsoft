@@ -38,9 +38,49 @@ public static class WebApplicationExtensions
 		return repository.GetById(id);
 	}
 
-	private static void UpdateHandler()
+	private static IResult UpdateHandler(
+		[FromQuery] Guid id,
+		[FromQuery] Guid? newParent,
+		[FromQuery] Guid[]? newChildren,
+		[FromServices] ITreeItemRepository repository)
 	{
-		throw new NotImplementedException();
+		var item = repository.GetById(id);
+
+		if (item is null)
+		{
+			return Results.NotFound();
+		}
+
+		if (newParent.HasValue)
+		{
+			var parent = repository.GetById(newParent.Value);
+
+			if (parent is null)
+			{
+				return Results.NotFound();
+			}
+
+			item.Parent = parent;
+		}
+
+		if (newChildren is not null)
+		{
+			foreach (var childGuid in newChildren)
+			{
+				var child = repository.GetById(childGuid);
+
+				if (child is null)
+				{
+					return Results.NotFound();
+				}
+
+				item.Children.Add(child);
+			}
+		}
+
+		repository.Update(item);
+
+		return Results.Ok(item);
 	}
 
 	private static IResult DeleteHandler(
